@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import coil.api.load
 import com.hw.apodmaterialdesign.R
 import com.hw.apodmaterialdesign.data.PictureOfTheDayData
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_apod.*
 
 class APODFragment : Fragment() {
 
@@ -29,7 +29,7 @@ class APODFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.getData()
-            .observe(this, Observer<PictureOfTheDayData> { renderData(it) })
+            .observe(viewLifecycleOwner, Observer<PictureOfTheDayData> { renderData(it) })
     }
 
 
@@ -38,7 +38,7 @@ class APODFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_apod, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -10,5 +10,5 @@ interface IDataSource {
     fun getPictureOfTheDay(@Query("api_key") apiKey: String): Call<APODServerResponseData>
 
     @GET("planetary/apod")
-    fun getPicture(@Query("api_key") apiKey: String, @Query("date") date: String):Call<APODServerResponseData>
+    fun getPictureByDate(@Query("api_key") apiKey: String, @Query("date") date: String):Call<APODServerResponseData>
 }
