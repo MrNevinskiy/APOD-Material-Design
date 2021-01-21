@@ -78,7 +78,7 @@ class APODFragment : Fragment() {
                         webView.loadUrl(url)
                     } else {
                         image_view.load(url) {
-                            lifecycle(this@APODFragment)
+                            lifecycle(viewLifecycleOwner)
                             error(R.drawable.ic_load_error_vector)
                             placeholder(R.drawable.ic_no_photo_vector)
                         }
