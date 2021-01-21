@@ -1,12 +1,12 @@
-package com.hw.apodmaterialdesign.ui.fragment
+package com.hw.apodmaterialdesign.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hw.apodmaterialdesign.BuildConfig
-import com.hw.apodmaterialdesign.data.PictureOfTheDayData
-import com.hw.apodmaterialdesign.data.entity.APODServerResponseData
-import com.hw.apodmaterialdesign.data.retrofit.APODRetrofitImpl
+import com.hw.apodmaterialdesign.model.PictureOfTheDayData
+import com.hw.apodmaterialdesign.model.entity.APODServerResponseData
+import com.hw.apodmaterialdesign.model.retrofit.APODRetrofitImpl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

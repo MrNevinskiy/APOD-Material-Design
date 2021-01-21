@@ -1,7 +1,7 @@
-package com.hw.apodmaterialdesign.data.retrofit
+package com.hw.apodmaterialdesign.model.retrofit
 
 import com.google.gson.GsonBuilder
-import com.hw.apodmaterialdesign.data.api.IDataSource
+import com.hw.apodmaterialdesign.model.api.IDataSource
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,4 +1,4 @@
-package com.hw.apodmaterialdesign.data.entity
+package com.hw.apodmaterialdesign.model.entity
 
 import com.google.gson.annotations.SerializedName
 

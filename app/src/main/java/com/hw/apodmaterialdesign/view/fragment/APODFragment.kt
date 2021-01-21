@@ -1,26 +1,21 @@
-package com.hw.apodmaterialdesign.ui.fragment
+package com.hw.apodmaterialdesign.view.fragment
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import coil.api.load
 import com.hw.apodmaterialdesign.R
-import com.hw.apodmaterialdesign.data.PictureOfTheDayData
+import com.hw.apodmaterialdesign.model.PictureOfTheDayData
+import com.hw.apodmaterialdesign.view.activity.MainActivity
+import com.hw.apodmaterialdesign.viewmodel.APODFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_apod.*
 
 class APODFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = APODFragment()
-    }
 
     private val viewModel: APODFragmentViewModel by lazy {
         ViewModelProviders.of(this).get(APODFragmentViewModel::class.java)
@@ -32,12 +27,8 @@ class APODFragment : Fragment() {
             .observe(viewLifecycleOwner, Observer<PictureOfTheDayData> { renderData(it) })
     }
 
-
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_apod, container, false)
     }
 
@@ -45,9 +36,29 @@ class APODFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         input_layout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${input_edit_text.text.toString()}")
+                data =
+                    Uri.parse("https://en.wikipedia.org/wiki/${input_edit_text.text.toString()}")
             })
         }
+        setBottomAppBar(view)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_bottom_bar, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, SettingsFragment())?.addToBackStack(null)?.commit()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setBottomAppBar(view: View) {
+        val context = activity as MainActivity
+        context.setSupportActionBar(view.findViewById(R.id.bottom_app_bar))
+        setHasOptionsMenu(true)
     }
 
     private fun renderData(data: PictureOfTheDayData?) {
@@ -74,6 +85,9 @@ class APODFragment : Fragment() {
                     }
                 }
             }
+            is PictureOfTheDayData.Loading -> {
+
+            }
             is PictureOfTheDayData.Error -> {
                 toast(data.error.message)
             }
@@ -85,6 +99,10 @@ class APODFragment : Fragment() {
             setGravity(Gravity.BOTTOM, 0, 250)
             show()
         }
+    }
+
+    companion object {
+        fun newInstance() = APODFragment()
     }
 
 }

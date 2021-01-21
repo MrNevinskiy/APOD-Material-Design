@@ -1,6 +1,6 @@
-package com.hw.apodmaterialdesign.data.api
+package com.hw.apodmaterialdesign.model.api
 
-import com.hw.apodmaterialdesign.data.entity.APODServerResponseData
+import com.hw.apodmaterialdesign.model.entity.APODServerResponseData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
