@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hw.apodmaterialdesign.BuildConfig
 import com.hw.apodmaterialdesign.model.PictureOfTheDayData
-import com.hw.apodmaterialdesign.model.entity.APODServerResponseData
+import com.hw.apodmaterialdesign.model.entity.apod.APODServerResponseData
 import com.hw.apodmaterialdesign.model.retrofit.APODRetrofitImpl
 import retrofit2.Call
 import retrofit2.Callback

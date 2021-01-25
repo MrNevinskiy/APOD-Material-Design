@@ -1,6 +1,6 @@
 package com.hw.apodmaterialdesign.model
 
-import com.hw.apodmaterialdesign.model.entity.APODServerResponseData
+import com.hw.apodmaterialdesign.model.entity.apod.APODServerResponseData
 
 sealed class PictureOfTheDayData {
     data class Success(val serverResponseData: APODServerResponseData) : PictureOfTheDayData()
