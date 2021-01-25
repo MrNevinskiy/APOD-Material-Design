@@ -15,5 +15,5 @@ interface IDataSource {
     fun getPictureMars(@Query("earth_date") date: String, @Query("api_key") apiKey: String):Call<MarsServerResponseData>
 
     @GET("DONKI/FLR")
-    fun getSolarFlare(@Query("startDate") startDate: String,@Query("endDate") endDate: String,@Query("api_key") apiKey: String):Call<SolarFlareServerResponseData>
+    fun getSolarFlare(@Query("startDate") startDate: String,@Query("endDate") endDate: String,@Query("api_key") apiKey: String):Call<ArrayList<SolarFlareServerResponseData>>
 }
