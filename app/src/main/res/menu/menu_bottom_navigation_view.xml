@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_view_earth"
+        android:icon="@drawable/ic_search"
+        android:title="APOD" />
+
+    <item
+        android:id="@+id/bottom_view_mars"
+        android:icon="@drawable/ic_outline_lens_24"
+        android:title="Mars" />
+
+    <item
+        android:id="@+id/bottom_view_solar_flare"
+        android:icon="@drawable/ic_baseline_cloud_24"
+        android:title="Solar Flare" />
+
+    <item
+        android:id="@+id/bottom_view_setting"
+        android:icon="@drawable/ic_settings_menu"
+        android:title="Setting" />
+</menu>
