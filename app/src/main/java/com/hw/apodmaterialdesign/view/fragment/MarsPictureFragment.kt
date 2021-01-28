@@ -27,7 +27,7 @@ class MarsPictureFragment: Fragment() {
         arguments?.let {setText(it.getString("date", "")) }
     }
 
-    fun setImage(url:String){
+    private fun setImage(url:String){
         image_view_mars.load(url) {
             lifecycle(this@MarsPictureFragment)
             error(R.drawable.ic_load_error_vector)
@@ -35,7 +35,7 @@ class MarsPictureFragment: Fragment() {
         }
     }
 
-    fun setText(text: String){
+    private fun setText(text: String){
         text_view_mars.text = text
     }
 
