@@ -8,7 +8,6 @@
         <item name="themeColorSecondaryVariant">@color/french_pass</item>
         <item name="themeColorOnSecondary">@color/submarine</item>
 
-        <item name="android:forceDarkAllowed">true</item>
         <item name="android:textColor">?attr/themeColorPrimary</item>
         <item name="android:statusBarColor" >?attr/colorPrimaryDark</item>
         <item name="android:navigationBarColor" >?attr/colorPrimaryDark</item>
@@ -28,7 +27,6 @@
         <item name="themeColorSecondaryVariant">@color/macaroni_and_cheese</item>
         <item name="themeColorOnSecondary">@color/white</item>
 
-        <item name="android:forceDarkAllowed">true</item>
         <item name="android:textColor">?attr/themeColorPrimary</item>
         <item name="android:statusBarColor" >?attr/themeColorPrimaryVariant</item>
         <item name="android:navigationBarColor" >?attr/themeColorPrimaryVariant</item>

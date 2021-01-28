@@ -1,7 +1,6 @@
 package com.hw.apodmaterialdesign.view.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -12,12 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.hw.apodmaterialdesign.R
 import com.hw.apodmaterialdesign.model.MarsData
-import com.hw.apodmaterialdesign.model.entity.mars.Rover
 import com.hw.apodmaterialdesign.util.ViewPagerAdapter
 import com.hw.apodmaterialdesign.viewmodel.MarsFragmentViewModel
-import kotlinx.android.synthetic.main.view_pager_mars.*
-import java.util.*
-import kotlin.collections.ArrayList
+import kotlinx.android.synthetic.main.fragment_mars_view_pager.*
 
 class MarsFragment : Fragment() {
 
@@ -33,7 +29,7 @@ class MarsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.view_pager_mars, container, false)
+        return inflater.inflate(R.layout.fragment_mars_view_pager_start, container, false)
     }
 
 
