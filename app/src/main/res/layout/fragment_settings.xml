@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_themes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -16,14 +16,14 @@
             android:layout_margin="@dimen/base_margin"
             android:text="@string/themes" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_settings_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/settings" />
 
-        <androidx.appcompat.widget.SwitchCompat
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/selected_theme"
             android:textColor="?attr/themeColorPrimary"
             android:layout_width="match_parent"

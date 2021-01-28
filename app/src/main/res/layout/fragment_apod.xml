@@ -61,7 +61,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/webView"
                 app:srcCompat="@drawable/ic_no_photo_vector" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -10,12 +10,14 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import coil.api.load
 import com.hw.apodmaterialdesign.R
 import com.hw.apodmaterialdesign.model.MarsData
+import com.hw.apodmaterialdesign.model.entity.mars.Rover
+import com.hw.apodmaterialdesign.util.ViewPagerAdapter
 import com.hw.apodmaterialdesign.viewmodel.MarsFragmentViewModel
-import kotlinx.android.synthetic.main.fragment_apod.*
-import kotlinx.android.synthetic.main.fragment_mars.*
+import kotlinx.android.synthetic.main.view_pager_mars.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MarsFragment : Fragment() {
 
@@ -31,7 +33,7 @@ class MarsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_mars, container, false)
+        return inflater.inflate(R.layout.view_pager_mars, container, false)
     }
 
 
@@ -41,17 +43,14 @@ class MarsFragment : Fragment() {
                 val earthDate: ArrayList<String> = ArrayList()
                 val imageUrl: ArrayList<String> = ArrayList()
                 data.serverResponseData.photos?.forEach {
-                    it.img_src?.let { img -> imageUrl.add(img) }
+                    it.img_src?.let { img -> imageUrl.add(img)}
                     it.earth_date?.let { date -> earthDate.add(date) }
                 }
                 if (imageUrl.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
-                    image_view_mars.load(imageUrl[0]) {
-                        lifecycle(this@MarsFragment)
-                        error(R.drawable.ic_load_error_vector)
-                        placeholder(R.drawable.ic_no_photo_vector)
-                    }
+                    view_pager.adapter = ViewPagerAdapter(childFragmentManager, earthDate, imageUrl)
+                    tab_layout.setupWithViewPager(view_pager)
                 }
             }
             is MarsData.Loading -> {

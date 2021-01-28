@@ -26,7 +26,7 @@ class SettingsFragment: Fragment() {
             } else {
                 ThemeHolder.id = R.style.Theme_APODMaterialDesign
             }
-            activity?.recreate()
+            requireActivity().recreate()
         }
     }
 }
