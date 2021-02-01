@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hw.apodmaterialdesign.BuildConfig
 import com.hw.apodmaterialdesign.model.MarsData
+import com.hw.apodmaterialdesign.model.entity.apod.APODServerResponseData
 import com.hw.apodmaterialdesign.model.entity.mars.MarsServerResponseData
 import com.hw.apodmaterialdesign.model.retrofit.APODRetrofitImpl
 import retrofit2.Call
@@ -24,16 +25,16 @@ class MarsFragmentViewModel constructor(
     private fun sendServerRequest() {
         liveDataForViewToObserve.value = MarsData.Loading(null)
         val apiKey: String = BuildConfig.NASA_API_KEY
-        val date = "2014-02-01"
+        val num = 20
 
         if (apiKey.isBlank()) {
             MarsData.Error(Throwable("You need API key"))
         } else {
-            retrofitImpl.getRetrofitImpl().getPictureMars(date, apiKey).enqueue(object :
-                Callback<MarsServerResponseData> {
+            retrofitImpl.getRetrofitImpl().getPictures(num, apiKey).enqueue(object :
+                Callback<List<APODServerResponseData>> {
                 override fun onResponse(
-                    call: Call<MarsServerResponseData>,
-                    response: Response<MarsServerResponseData>
+                    call: Call<List<APODServerResponseData>>,
+                    response: Response<List<APODServerResponseData>>
                 ) {
                     if (response.isSuccessful && response.body() != null) {
                         liveDataForViewToObserve.value =
@@ -51,7 +52,7 @@ class MarsFragmentViewModel constructor(
                     }
                 }
 
-                override fun onFailure(call: Call<MarsServerResponseData>, t: Throwable) {
+                override fun onFailure(call: Call<List<APODServerResponseData>>, t: Throwable) {
                     liveDataForViewToObserve.value = MarsData.Error(t)
                 }
             })

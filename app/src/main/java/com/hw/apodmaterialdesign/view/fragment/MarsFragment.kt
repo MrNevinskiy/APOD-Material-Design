@@ -1,10 +1,15 @@
 package com.hw.apodmaterialdesign.view.fragment
 
 import android.os.Bundle
+import android.transition.ChangeBounds
+import android.transition.ChangeImageTransform
+import android.transition.TransitionManager
+import android.transition.TransitionSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -13,7 +18,9 @@ import com.hw.apodmaterialdesign.R
 import com.hw.apodmaterialdesign.model.MarsData
 import com.hw.apodmaterialdesign.util.ViewPagerAdapter
 import com.hw.apodmaterialdesign.viewmodel.MarsFragmentViewModel
+import kotlinx.android.synthetic.main.fragment_apod.*
 import kotlinx.android.synthetic.main.fragment_mars_view_pager.*
+import kotlinx.android.synthetic.main.fragment_mars_view_pager.main
 
 class MarsFragment : Fragment() {
 
@@ -38,14 +45,18 @@ class MarsFragment : Fragment() {
             is MarsData.Success -> {
                 val earthDate: ArrayList<String> = ArrayList()
                 val imageUrl: ArrayList<String> = ArrayList()
-                data.serverResponseData.photos?.forEach {
-                    it.img_src?.let { img -> imageUrl.add(img)}
-                    it.earth_date?.let { date -> earthDate.add(date) }
+                val explanation: ArrayList<String> = ArrayList()
+                val mediaType: ArrayList<String> = ArrayList()
+                data.serverResponseData?.forEach {
+                    it.hdurl?.let { img -> imageUrl.add(img)}
+                    it.date?.let { date -> earthDate.add(date) }
+                    it.explanation?.let { exp -> explanation.add(exp) }
+                    it.mediaType?.let { mt -> mediaType.add(mt) }
                 }
                 if (imageUrl.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
-                    view_pager.adapter = ViewPagerAdapter(childFragmentManager, earthDate, imageUrl)
+                    view_pager.adapter = ViewPagerAdapter(childFragmentManager, earthDate, imageUrl, explanation, mediaType)
                     tab_layout.setupWithViewPager(view_pager)
                 }
             }

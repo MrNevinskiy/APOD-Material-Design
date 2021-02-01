@@ -6,9 +6,13 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.hw.apodmaterialdesign.view.fragment.MarsPictureFragment
 
-class ViewPagerAdapter(fragmentManager: FragmentManager,
-                       private val date: ArrayList<String>,
-                       private val imageUrl: ArrayList<String>) :
+class ViewPagerAdapter(
+    fragmentManager: FragmentManager,
+    private val date: ArrayList<String>,
+    private val imageUrl: ArrayList<String>,
+    private val exp: ArrayList<String>,
+    private val mediaType: ArrayList<String>
+) :
     FragmentStatePagerAdapter(fragmentManager) {
 
 
@@ -16,6 +20,8 @@ class ViewPagerAdapter(fragmentManager: FragmentManager,
         val arguments = Bundle()
         arguments.putString("date", date[position])
         arguments.putString("imageUrl", imageUrl[position])
+        arguments.putString("exp", exp[position])
+        arguments.putString("mediaType", mediaType[position])
 
         val fragment = MarsPictureFragment()
         fragment.arguments = arguments
