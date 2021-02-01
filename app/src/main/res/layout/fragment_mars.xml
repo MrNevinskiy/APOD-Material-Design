@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/text_view_mars"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="ExtraText">
-    </com.google.android.material.textview.MaterialTextView>
+        android:layout_height="match_parent">
 
-    <com.hw.apodmaterialdesign.util.EquilateralImageView
-            android:id="@+id/image_view_mars"
+        <LinearLayout
+            android:id="@+id/mars_ll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="@string/photo_of_the_day"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/bg_mars" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-</FrameLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_mars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="date"
+                tools:ignore="ExtraText" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_mars_exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Exp"
+                tools:ignore="ExtraText" />
+
+            <WebView
+                android:id="@+id/mars_webView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="9dp"/>
+
+            <com.hw.apodmaterialdesign.util.EquilateralImageView
+                android:id="@+id/image_view_mars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/photo_of_the_day"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
