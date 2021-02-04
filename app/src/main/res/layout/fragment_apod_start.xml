@@ -30,15 +30,15 @@
                 app:endIconMode="custom"
                 app:helperText="@string/use_wikipedia"
                 app:layout_constraintBottom_toTopOf="@+id/webView"
-                app:layout_constraintEnd_toStartOf="parent">
+                app:layout_constraintStart_toEndOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_edit_text"
-                    style="@style/SearchInputStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:maxLength="20" />
+                    android:maxLength="20"
+                    style="@style/SearchInputStyle" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <WebView
@@ -48,7 +48,7 @@
                 android:layout_marginEnd="9dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/input_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/input_layout"/>
 
             <com.hw.apodmaterialdesign.util.EquilateralImageView
                 android:id="@+id/image_view"
@@ -73,7 +73,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_view" />
-
         </androidx.constraintlayout.motion.widget.MotionLayout>
     </androidx.core.widget.NestedScrollView>
 

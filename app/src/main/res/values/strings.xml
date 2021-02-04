@@ -7,4 +7,10 @@
     <string name="settings">Settings</string>
     <string name="themes">Themes</string>
     <string name="dark_theme">Dark theme</string>
+    <string name="notes">Notes</string>
+    <string name="setting">Setting</string>
+    <string name="solar_flare">Solar Flare</string>
+    <string name="mars">Mars</string>
+    <string name="picture_of_the_day">Picture of the day</string>
+    <string name="text">Text</string>
 </resources>

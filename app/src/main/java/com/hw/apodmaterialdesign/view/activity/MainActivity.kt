@@ -8,6 +8,7 @@ import com.hw.apodmaterialdesign.view.fragment.APODFragment
 import com.hw.apodmaterialdesign.view.fragment.MarsFragment
 import com.hw.apodmaterialdesign.view.fragment.SettingsFragment
 import com.hw.apodmaterialdesign.view.fragment.SolarFlareFragment
+import com.hw.apodmaterialdesign.view.fragment.notes.NotesFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +37,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.bottom_view_solar_flare -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.activity_api_bottom_container, SolarFlareFragment())
+                        .commitAllowingStateLoss()
+                    true
+                }
+                R.id.bottom_view_notes -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.activity_api_bottom_container, NotesFragment())
                         .commitAllowingStateLoss()
                     true
                 }

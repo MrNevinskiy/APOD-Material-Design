@@ -3,20 +3,26 @@
     <item
         android:id="@+id/bottom_view_earth"
         android:icon="@drawable/ic_search"
-        android:title="APOD" />
+        android:title="@string/picture_of_the_day" />
 
     <item
         android:id="@+id/bottom_view_mars"
         android:icon="@drawable/ic_outline_lens_24"
-        android:title="Mars" />
+        android:title="@string/mars" />
 
     <item
         android:id="@+id/bottom_view_solar_flare"
         android:icon="@drawable/ic_baseline_cloud_24"
-        android:title="Solar Flare" />
+        android:title="@string/solar_flare" />
+
+    <item
+        android:id="@+id/bottom_view_notes"
+        android:icon="@drawable/ic_favourite_menu"
+        android:title="@string/notes" />
+
 
     <item
         android:id="@+id/bottom_view_setting"
         android:icon="@drawable/ic_settings_menu"
-        android:title="Setting" />
+        android:title="@string/setting" />
 </menu>

@@ -1,26 +1,19 @@
 package com.hw.apodmaterialdesign.view.fragment
 
 import android.os.Bundle
-import android.transition.ChangeBounds
-import android.transition.ChangeImageTransform
-import android.transition.TransitionManager
-import android.transition.TransitionSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.hw.apodmaterialdesign.R
 import com.hw.apodmaterialdesign.model.MarsData
-import com.hw.apodmaterialdesign.util.ViewPagerAdapter
+import com.hw.apodmaterialdesign.util.ViewPagerAdapterMars
 import com.hw.apodmaterialdesign.viewmodel.MarsFragmentViewModel
-import kotlinx.android.synthetic.main.fragment_apod.*
 import kotlinx.android.synthetic.main.fragment_mars_view_pager.*
-import kotlinx.android.synthetic.main.fragment_mars_view_pager.main
 
 class MarsFragment : Fragment() {
 
@@ -36,7 +29,7 @@ class MarsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_mars_view_pager_start, container, false)
+        return inflater.inflate(R.layout.fragment_mars_view_pager, container, false)
     }
 
 
@@ -56,7 +49,7 @@ class MarsFragment : Fragment() {
                 if (imageUrl.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
-                    view_pager.adapter = ViewPagerAdapter(childFragmentManager, earthDate, imageUrl, explanation, mediaType)
+                    view_pager.adapter = ViewPagerAdapterMars(childFragmentManager, earthDate, imageUrl, explanation, mediaType)
                     tab_layout.setupWithViewPager(view_pager)
                 }
             }

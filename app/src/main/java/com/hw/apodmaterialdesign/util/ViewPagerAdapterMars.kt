@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.hw.apodmaterialdesign.view.fragment.MarsPictureFragment
 
-class ViewPagerAdapter(
+class ViewPagerAdapterMars(
     fragmentManager: FragmentManager,
     private val date: ArrayList<String>,
     private val imageUrl: ArrayList<String>,

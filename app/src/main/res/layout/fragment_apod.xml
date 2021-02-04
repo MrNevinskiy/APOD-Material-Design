@@ -48,20 +48,19 @@
                 android:layout_marginEnd="9dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/input_layout"
-                android:alpha="1"/>
+                app:layout_constraintTop_toBottomOf="@+id/input_layout"/>
 
             <com.hw.apodmaterialdesign.util.EquilateralImageView
                 android:id="@+id/image_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:alpha="1"
                 android:contentDescription="@string/photo_of_the_day"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/webView"
-                app:srcCompat="@drawable/ic_no_photo_vector"
-                android:alpha="1"/>
+                app:srcCompat="@drawable/ic_no_photo_vector" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_view"
