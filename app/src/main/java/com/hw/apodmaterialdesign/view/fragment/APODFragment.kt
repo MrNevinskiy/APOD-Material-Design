@@ -3,6 +3,11 @@ package com.hw.apodmaterialdesign.view.fragment
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.LeadingMarginSpan
+import android.text.style.URLSpan
 import android.transition.ChangeBounds
 import android.transition.ChangeImageTransform
 import android.transition.TransitionManager
@@ -58,7 +63,7 @@ class APODFragment : Fragment() {
                 if (url.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
-                    text_view.text = serverResponseData.explanation
+                    setDescription(serverResponseData.explanation)
                     if (serverResponseData.mediaType == "video") {
                         webView.clearCache(true)
                         webView.clearHistory()
@@ -80,6 +85,19 @@ class APODFragment : Fragment() {
             is PictureOfTheDayData.Error -> {
                 toast(data.error.message)
             }
+        }
+    }
+
+    private fun setDescription(description: String?) {
+        description?.let {
+            val spannableString = SpannableString(it)
+            spannableString.setSpan(
+                LeadingMarginSpan.Standard(100, 0),
+                0,
+                it.length,
+                Spanned.SPAN_INCLUSIVE_EXCLUSIVE
+            )
+            text_view.text = spannableString
         }
     }
 
