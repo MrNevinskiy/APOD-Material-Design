@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.APODMaterialDesign" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="themeColorPrimary">@color/colorPrimaryDark</item>
+        <item name="themeColorPrimaryVariant">@color/colorPrimary</item>
+        <item name="themeColorOnPrimary">@color/colorAccent</item>
+
+        <item name="themeColorSecondary">@color/royal_blue</item>
+        <item name="themeColorSecondaryVariant">@color/french_pass</item>
+        <item name="themeColorOnSecondary">@color/submarine</item>
+
+        <item name="android:textColor">?attr/themeColorPrimary</item>
+        <item name="android:statusBarColor" >?attr/colorPrimaryDark</item>
+        <item name="android:navigationBarColor" >?attr/colorPrimaryDark</item>
+        <item name="android:colorBackground" >?attr/themeColorPrimaryVariant</item>
+
+        <item name="themeColorError">@color/cosmic</item>
+        <item name="themeColorSurface">@color/viola</item>
+
+    </style>
+
+    <style name="Theme.APODMaterialDesignDark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="themeColorPrimary">@color/white </item>
+        <item name="themeColorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="themeColorOnPrimary">@color/colorAccent</item>
+
+        <item name="themeColorSecondary">@color/colorAccent</item>
+        <item name="themeColorSecondaryVariant">@color/macaroni_and_cheese</item>
+        <item name="themeColorOnSecondary">@color/white</item>
+
+        <item name="android:textColor">?attr/themeColorPrimary</item>
+        <item name="android:statusBarColor" >?attr/themeColorPrimaryVariant</item>
+        <item name="android:navigationBarColor" >?attr/themeColorPrimaryVariant</item>
+        <item name="android:colorBackground" >?attr/themeColorPrimaryVariant</item>
+
+        <item name="themeColorError">@color/cosmic</item>
+        <item name="themeColorSurface">@color/viola</item>
+
+    </style>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SearchStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/input_colors_selector</item>
+        <item name="hintTextColor">@color/input_colors_selector</item>
+        <item name="android:textColorHint">@color/input_colors_selector</item>
+        <item name="helperTextTextColor">@color/input_colors_selector</item>
+        <item name="counterTextColor">@color/input_colors_selector</item>
+        <item name="endIconTint">@color/input_colors_selector</item>
+    </style>
+
+    <style name="SearchInputStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textCursorDrawable">@drawable/input_cursor</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="hintTextColor">@color/cascade</item>
+    </style>
+
+</resources>

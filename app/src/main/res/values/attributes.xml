@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="themeColorPrimary" format="reference" />
+    <attr name="themeColorPrimaryVariant" format="reference" />
+    <attr name="themeColorOnPrimary" format="reference" />
+    <attr name="themeColorSecondary" format="reference" />
+    <attr name="themeColorSecondaryVariant" format="reference" />
+    <attr name="themeColorOnSecondary" format="reference" />
+    <attr name="themeStatusBarColor" format="reference" />
+    <attr name="themeColorBackground" format="reference" />
+    <attr name="themeColorError" format="reference" />
+    <attr name="themeColorSurface" format="reference" />
+</resources>
