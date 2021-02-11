@@ -1,6 +1,7 @@
 package com.hw.apodmaterialdesign.view.fragment
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableString
@@ -47,6 +48,9 @@ class APODFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.let {
+            text_view.typeface = Typeface.createFromAsset(it.assets, "RobotoLightItalic-E9nn.ttf")
+        }
         input_layout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
