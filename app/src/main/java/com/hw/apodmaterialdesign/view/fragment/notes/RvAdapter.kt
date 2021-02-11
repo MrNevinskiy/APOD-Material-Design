@@ -70,7 +70,6 @@ class RvAdapter(private var data: MutableList<Note>, private val dragListener: O
 
         private fun changeTextVisibility() {
             itemView.note_text.visibility = if (itemView.note_text.isVisible) View.GONE else View.VISIBLE
-            notifyItemChanged(layoutPosition)
         }
 
         private fun addItem() {
